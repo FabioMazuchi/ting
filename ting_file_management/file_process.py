@@ -1,8 +1,4 @@
 import sys
-
-# from queue import Queue
-# from file_management import txt_importer
-
 from ting_file_management.file_management import txt_importer
 
 
@@ -33,9 +29,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
-
-
-# queue = Queue()
-# process("statics/arquivo_teste.txt", queue)
-# remove(queue)
+    try:
+        data = instance.search(position)
+        print(data, file=sys.stdout)
+    except IndexError:
+        print("Posição inválida", file=sys.stderr)
